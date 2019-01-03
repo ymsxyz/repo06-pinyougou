@@ -41,11 +41,11 @@ public class BrandController {
 		try {
 			brandService.addOne(tbBrand);
 			result.setSuccess(true);
-			result.setmessage("添加成功");
+			result.setMessage("添加成功");
 		} catch (Exception e) {
 			e.getStackTrace();
 			result.setSuccess(false);
-			result.setmessage("添加失败");
+			result.setMessage("添加失败");
 		} finally {
 			return result;
 		}
@@ -67,11 +67,11 @@ public class BrandController {
 		try {
 			brandService.update(brand);
 			result.setSuccess(true);
-			result.setmessage("修改成功");
+			result.setMessage("修改成功");
 		} catch (Exception e) {
 			e.getStackTrace();
 			result.setSuccess(false);
-			result.setmessage("修改失败");
+			result.setMessage("修改失败");
 		} finally {
 			return result;
 		}

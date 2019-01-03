@@ -29,11 +29,18 @@
 		<ik.version>2012_u6</ik.version>
 		<spring-security-web.version>4.1.0.RELEASE</spring-security-web.version>
 		<spring-security-config.version>4.1.0.RELEASE</spring-security-config.version>
+		<jedis.version>2.8.1</jedis.version>
+		<spring-data-redis.version>1.7.2.RELEASE</spring-data-redis.version>
+		<activemq-client.version>5.13.4</activemq-client.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-client</artifactId>
+				<version>${activemq-client.version}</version>
+			</dependency>
 			<!-- Spring -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -285,5 +292,24 @@
 		<module>pinyougou-sellergoods-service</module>
 		<module>pinyougou-manager-web</module>
 		<module>pinyougou-shop-web</module>
+		<module>pinyougou-content-interface</module>
+		<module>pinyougou-content-service</module>
+
+		<module>pinyougou-portal-web</module>
+		<module>pinyougou-solr-util</module>
+		<module>pinyougou-search-interface</module>
+		<module>pinyougou-search-service</module>
+		<module>com.pinyougou.search.controller</module>
+		<module>pinyougou-search-web</module>
+		<module>pinyougou-page-interface</module>
+		<module>pinyougou-page-service</module>
+		<module>pinyougou-page-web</module>
+		<module>pinyougou-user-interface</module>
+		<module>pinyougou-user-service</module>
+		<module>pinyougou-user-web</module>
+		<module>com-pinyougou-cart-interface</module>
+		<module>pinyougou-cart-interface</module>
+		<module>pinyougou-cart-service</module>
+		<module>pinyougou-cart-web</module>
 	</modules>
 </project>

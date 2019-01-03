@@ -13,21 +13,21 @@
 	<!-- 页面拦截规则 -->
 	<!-- 不使用spel表达式,默认开启 -->
 	<http use-expressions="false">
-	<!-- 拦截一级目录,允许访问的角色:ROLE_ADMIN -->
+		<!-- 拦截一级目录,允许访问的角色:ROLE_ADMIN -->
 		<intercept-url pattern="/**" access="ROLE_ADMIN" />
 		<!-- login-page:登录页面;登录成功页面;登录失败页面;无论从那个页面进入,成功都跳转到index.html,默认成功跳转到原页面 -->
 		<form-login login-page="/login.html" default-target-url="/admin/index.html"
 			authentication-failure-url="/login.html" always-use-default-target="true" />
-			<!-- 关闭csrf:Cross-site request forgery跨站请求伪造 ;jsp页面可用 -->
+		<!-- 关闭csrf:Cross-site request forgery跨站请求伪造 ;jsp页面可用 -->
 		<csrf disabled="true" />
 		<headers>
-		<!-- 系统使用框架页 iframe,需要配置-->
+			<!-- 系统使用框架页 iframe,需要配置 -->
 			<frame-options policy="SAMEORIGIN" />
 		</headers>
 		<!-- 注銷 -->
-		<logout/>
+		<logout />
 	</http>
-	<!-- 认证管理器:分配用户和角色-->
+	<!-- 认证管理器:分配用户和角色 -->
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>

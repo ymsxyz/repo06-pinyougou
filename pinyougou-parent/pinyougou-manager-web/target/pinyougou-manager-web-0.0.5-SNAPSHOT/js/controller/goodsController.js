@@ -1,5 +1,5 @@
  //控制层 
-app.controller('goodsController' ,function($scope,$controller   ,goodsService){	
+app.controller('goodsController' ,function($scope,$controller   ,goodsService,itemCatService){	
 	
 	$controller('baseController',{$scope:$scope});//继承
 	
@@ -11,6 +11,8 @@ app.controller('goodsController' ,function($scope,$controller   ,goodsService){
 			}			
 		);
 	}    
+	
+	
 	
 	//分页
 	$scope.findPage=function(page,rows){			
@@ -76,5 +78,22 @@ app.controller('goodsController' ,function($scope,$controller   ,goodsService){
 			}			
 		);
 	}
-    
+	
+    //定义status数组,页面状态友好显示
+	$scope.status=['未审核','已审核','审核未通过','关闭'];
+	
+	//查询所有itemCat赋值给变量,用于友好显示页面三级分类字段
+	$scope.itemCatList=[];
+	
+	$scope.findItemCatList = function() {
+		
+		itemCatService.findAll().success(function(response) {
+			for(var i=0;i<response.length;i++){
+				//将id与name的值建立对应关系
+				$scope.itemCatList[response[i].id] = response[i].name;
+			}
+			
+		});
+	}
+	
 });	
